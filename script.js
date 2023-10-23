@@ -76,5 +76,5 @@ function startYourJourney() {
     return prompt("You move to next phase of Ratmeggedon, will you (a) lure the rats outside new york to the Hudson Valley or (b) give them cup noodles")
   }
   function ratNeedleGambling(){
-    return prompt("You have given the rats needles, and they discovered gambling scraps by betting on duels. There is now black market gambing. Tax coffers do not go up. Option (a) legalize rat dueling or (b) create rat strike force")
+    return prompt("You have given the rats needles, and they discovered gambling scraps by betting on duels. There is now black market gambling. Tax coffers do not go up. Option (a) legalize rat dueling or (b) create rat strike force")
   }
