@@ -6,14 +6,14 @@ function startYourJourney() {
     if(partA == "a") {
       alert("You put poison in the rats drinking water")
       alert("Rats are inebrieted but not inccapacitated")
-      let partB = ratNeedleGamble().toLowerCase()
+      let partB = ratNeedleLaughing().toLowerCase()
       if(partB == "a"){
         alert("Rats have stopped fighting now that each is deadlier, they use needles as walking sticks. Move up the class ladder of New York. They are now known as the Ratstors")
         alert("They fund your election and your opponents. That way they always come up on top.")
         alert("You lose elections, it's the way the wind blows. You're no longer mayor")
         alert("Congrats Goodbye")
       }else if(partB=="b"){
-        alert("You have introduced gambing. Opened a casino in Times Square underground. The rats are having too much fun. Rat on Rat crime increases. More dead rats but more rats keep coming")
+        alert("You have introduced gambling. Opened a casino in Times Square underground. The rats are having too much fun. Rat on Rat crime increases. More dead rats but more rats keep coming")
         alert("Spike in crime under your period creates an unprecedented loss for you. Go lick your wounds. Stay away from rats.")
         alert("Good Luck Goodbye")
       }else{
@@ -67,8 +67,8 @@ function startYourJourney() {
   return prompt("Do you want to (a)poison the rats or give them (b)pizza")
   
   }
-  function ratNeedleGamble(){
-  return prompt("The rats are laughing, move the plan b. Do you want to (a)give them needles for little rat duels or (b) introduce gambling")
+  function ratNeedleLaughing(){
+  return prompt("The rats are laughing, move to plan b. Do you want to (a)give them needles for little rat duels or (b) introduce gambling")
   
   }
   
