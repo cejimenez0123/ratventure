@@ -1,0 +1,13 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  button {
+    margin: auto;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: gold;
+    color: black;
+    border-color: yellow;
+  }
