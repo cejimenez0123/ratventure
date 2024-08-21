@@ -3,23 +3,25 @@ html {
     width: 100vw;
   }
   
-  button {
-    margin: 2em auto 2em auto; 
+button {
     padding: 1em;
     border-radius: 10px;
     background-color: gold;
-    font-size: large;
-    color: black;
+    font-size: x-large;
+    font-weight: 600;
+    color: rgb(0, 32, 6);
     font-family: 'Times New Roman', Times, serif;
     border-color: yellow;
   }
 
  #rat{
+  margin: auto;
   max-width: 10em;
  } 
 #main{
-  margin: auto;
+  text-align: center;
+  margin: 5em auto 0em auto;
   width: min-content;
   height: min-content;
-  min-width: 10em;
+  min-width: 13em;
 }
