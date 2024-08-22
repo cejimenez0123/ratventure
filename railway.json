@@ -3,11 +3,12 @@
     "build": {
       "builder": "nixpacks",
       "buildCommand": ""
-      },
+    },
     "deploy": {
-      "startCommand": "open index.html",
+      "startCommand": "npx serve -s .",
       "healthcheckPath": "/",
       "healthcheckTimeout": 100,
       "restartPolicyType": "never"
-      }
+    }
   }
+  
