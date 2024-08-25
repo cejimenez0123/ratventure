@@ -41,7 +41,7 @@ function startYourJourney() {
           "There are less rats. You get to be mayor another day")
           alert("Congrats Goodbye")
         }else if(partC=="2"){
-          alert("You start rat strike . Best of the best. In order to catch a rat, you have to think like a rat, so the rat stike force is made of rats.")
+          alert("You start rat strike force. Best of the best. In order to catch a rat, you have to think like a rat, so the rat stike force is made of rats.")
           alert("There's a revolution, rat strike force is leading the way to coup you with a rat army.")
          let partD = prompt("Do you (1) exit out the window and glue some hair on your face or (2) hope rats are nice").toLowerCase()
           if(partD=="1"){
@@ -76,8 +76,28 @@ function startYourJourney() {
             " You mayor get to be mayor another day.")
             alert("Congrats Goodbye")
           }else if(partC=="2"){
-            alert("Rats have been given cup noodles. The concetrartion of sodium in the cups is too much for rats. Population decimated by hyper tension. You get to be mayor another day")
-            alert("Congrats Goodbye")
+            alert("Rats have been given cup noodles. Rats get high blood pressue.")
+            alert("Rats die young from getting up to fast."
+            +"The survivors become sluggish but hilarious.")
+            alert("Rat start comedy open mic. Rats start Rat Jam open mic. They are now on HBO.")
+            alert("With humorous jabs at the city, one becomes popular as Rat Pryor. Rat Pryor says there is no beef on the pizza, just on your face. ")
+            alert("You’re asked about the comment at a press conference. “Mayor how do you feel? ")
+             prompt("(1) We got bigger things to worry about than name calling like protecting the community or (2) New Yorkers are known for their sense of humor, and that's what makes this city great.")
+            
+             alert("Community Board:The people are complaining about mocking rats. They just sit near the curb and laugh. Menacingly")
+        
+            let answer = prompt("Sir, what will you do"+
+             "(1) citywide campaign against public mocking or"+
+             " (2) install noisy mosquitoes that only rats can hear ")
+            if(answer=="1"){
+              alert("spent tax dollars on anti mocking campaign. People mock anti mocking campaign")
+              alert("You get to be mayor another day")
+        
+            }else if(answer=="2"){
+              alert("Mosquitoes make high pitch noise. Rats scurry back inside.")
+             
+              alert("You get to be mayor another day.")
+            }
           }else{
             alert("Rats kept eating pizza. They start pizza delivery company."+
             " The Rats fund your opponent and you in the next election."+
