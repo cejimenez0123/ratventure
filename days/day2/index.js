@@ -14,7 +14,9 @@ module.exports = function startDay2(prevChosenPaths){
         return path3()
 
     }else if(prevChosenPaths[0]=="2"&&prevChosenPaths[1]=="2"){
-        return path4()
+        let ans = path4()
+        alert("Community Board:The people are complaining about mocking rats. They just sit near the curb and laugh.")
+        return ans
     }else{
 
     }
