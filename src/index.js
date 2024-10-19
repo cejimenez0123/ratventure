@@ -1,10 +1,11 @@
 import "./style.css"
 
 import myImage from './assets/images/fancy_rat.png'; // Adjust the path as necessary
-
+import StoryTree from "./models/StoryTree";
 const imgElement = document.getElementById("rat");
 imgElement.src = myImage;
 function startYourJourney() {
+  const story = new StoryTree()
 story.insertStory()
 story.traverseAndPlay()
     

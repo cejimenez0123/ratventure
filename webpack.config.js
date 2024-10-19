@@ -9,6 +9,8 @@ module.exports = {
     open: true, // Automatically open the browser
     hot: true, // Enable hot module replacement
   },
+  performance: {
+    hints: false},
   entry: './src/index.js', // Your main JavaScript entry point
   output: {
     filename: 'bundle.js',
