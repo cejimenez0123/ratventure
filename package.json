@@ -17,8 +17,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "start": "webpack serve --mode development"
+    "start": "webpack server",
+    "build": "webpack",
+    "predeploy": "npm run build",
+"deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
