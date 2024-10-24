@@ -1,5 +1,7 @@
 
 import Node from "./node";
+import ReactGA from "react-ga4"
+import { getCookie } from "../cookie";
 export default class StoryTree {
     constructor() {
       this.root = null;
@@ -39,11 +41,25 @@ export default class StoryTree {
             }
 
             if (current.left || current.right) {
-            
+             
             const choice = prompt(current.data[current.data.length-1])
-            if (choice.toUpperCase() === '1') {
+            if (choice === '1') {
+              ReactGA.event({
+                category: "Story",
+                action: current.data,
+                label: getCookie("user_id"),
+                value:1, 
+                nonInteraction: false, 
+              });
               current = current.left;
-            } else if (choice.toUpperCase() === '2') {
+            } else if (choice === '2') {
+              ReactGA.event({
+                category: "Story",
+                action:current.data, 
+                label: getCookie("user_id"),
+                value: '2', 
+                nonInteraction: false, 
+              });
               current = current.right;
             } else {
               alert("Invalid choice! Please choose '1' or '2'.");
@@ -55,7 +71,14 @@ export default class StoryTree {
           }
         }
       }catch(e){
-        console.log(e)
+        ReactGA.event({
+          category: "Error",
+          action:getCookie("user_id"),
+          label:e.message, 
+      
+          nonInteraction: true, 
+        });
+        // console.log(e)
       }
       }
       insertStory(){
@@ -98,7 +121,7 @@ export default class StoryTree {
         "One becomes popular as Rat Pryor. Rat Pryor says there is no beef on the pizza, just on your face.",
         "You're asked about the comment at a press conference. 'Mayor how do you feel?'",
         "(1) 'We got bigger things to worry about than name calling"
-        +"like protecting the community' or (2)'New Yorkers are known "+
+        +"like protecting the community' or \n (2)'New Yorkers are known "+
         "for their sense of humor, and that's what makes this city great.'"],"22")
         this.insert(["Day 4",
         "Community Board:The people are complaining about mocking rats."
@@ -129,7 +152,7 @@ export default class StoryTree {
        this.insert(["You spend tax dollars on anti mocking campaign. People mock anti mocking campaign"
 ,"It is ineffectual.",
   "You get to mayor another day.","To Be Continued..."],"2211")
-       this.insert(["Mosquitoes make high pitch noise. Rats scurry back inside.",
+       this.insert(["Mosquitoes make high pitch noise that makes rats scurry inside.",
       "Kids can also hear it. Kids cry because painful ears. Teens don't congregate.",
       "Parents near the mosquitoes can't sleep because of kids"+
       "Parents don't know why kids cry when ever they open a window...",
@@ -150,7 +173,7 @@ export default class StoryTree {
          "You now need to find aged prosciutto at a city budget.",
          "Do you go to (1) the city's little italy or (2) Costco?"
        ],"21")
-      this.insert(["Little Italy is now a gellato stand.",
+      this.insert(["Little Italy is now a gelato stand.",
       "No prosciutto",
       "To Be Continued... \n"+
       "Arthur Ave or Bensonhurst"

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Ratventure</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" type="text/css" />
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1V5591LPW"></script>
 <script>
@@ -13,7 +13,8 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-F1V5591LPW');
+  gtag('config', 'G-F1V5591LPW',{cookie_domain: location.hostname,
+	cookie_flags: "SameSite=None;Secure",});
 </script>
 </head>
 
@@ -23,6 +24,10 @@
   <div id="main">
     <img id="rat"/>
   <button id="btn" >Start your journey</button>
+  <p>Updated: 10/18/24</p>
+</div> 
+<div>
+ Solbao Productions ©
 </div>
 </body>
 

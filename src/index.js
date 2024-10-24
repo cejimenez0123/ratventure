@@ -1,12 +1,25 @@
 import "./style.css"
-
+import ReactGA from "react-ga4";
 import myImage from './assets/images/fancy_rat.png'; // Adjust the path as necessary
 import StoryTree from "./models/StoryTree";
+import { v4 as uuidv4 } from 'uuid';
+import { getCookie,setCookie ,clearCookie} from "./cookie";
 const imgElement = document.getElementById("rat");
 imgElement.src = myImage;
 function startYourJourney() {
   const story = new StoryTree()
-story.insertStory()
+  story.insertStory()
+  if (!getCookie('user_id')) {
+
+    const userId = 'user_' + uuidv4();
+    setCookie('user_id', userId, 365);
+  }
+ReactGA.event({
+  category: "Start",
+  action: "Start Your Journey",
+  label: getCookie("user_id"), 
+  nonInteraction: false, 
+});
 story.traverseAndPlay()
     
 //  alert("You give the rats pizza,"
@@ -153,3 +166,5 @@ story.traverseAndPlay()
    
   }
  btn.addEventListener("click",startYourJourney)
+
+
