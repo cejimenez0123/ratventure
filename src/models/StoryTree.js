@@ -103,7 +103,7 @@ export default class StoryTree {
        this.insert(["You have introduced gambling."+
        " Got your hands greased,"+
        " and greased some hands and opened a casino.",
-       "The casion opens under the former McDonalds near Times Square.",
+       "The casino opens under the former McDonalds near Times Square.",
         "The rats are having too much fun. Rat on Rat crime increases. More dead rats but more rats keep coming",
        "Spike in crime under your period creates an unprecedented electoral loss for you. Go lick your wounds. Stay away from rats."
        ,"Good Luck Goodbye"],"12")
