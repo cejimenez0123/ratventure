@@ -1,26 +1,108 @@
-import "./style.css"
+import "./style.css";
 import ReactGA from "react-ga4";
-import myImage from './assets/images/fancy_rat.png'; // Adjust the path as necessary
+import myImage from './assets/images/fancy_rat.png'; 
 import StoryTree from "./models/StoryTree";
 import { v4 as uuidv4 } from 'uuid';
-import { getCookie,setCookie ,clearCookie} from "./cookie";
+import { getCookie, setCookie } from "./cookie";
+const btn = document.getElementById("btn");
 const imgElement = document.getElementById("rat");
-imgElement.src = myImage;
-function startYourJourney() {
-  const story = new StoryTree()
-  story.insertStory()
-  if (!getCookie('user_id')) {
+if (imgElement) {
+  imgElement.src = myImage;
+}
+if(btn){
+  console.log("Button found, adding event listener.");
+btn.addEventListener("click", startYourJourney);
+}
 
+
+
+function startYourJourney() {
+  const story = new StoryTree();
+  story.insertStory();
+
+  // Initialize user cookie
+  if (!getCookie('user_id')) {
     const userId = 'user_' + uuidv4();
     setCookie('user_id', userId, 365);
   }
-ReactGA.event({
-  category: "Start",
-  action: "Start Your Journey",
-  label: getCookie("user_id"), 
-  nonInteraction: false, 
-});
-story.traverseAndPlay()
+
+  ReactGA.event({
+    category: "Start",
+    action: "Start Your Journey",
+    label: getCookie("user_id"), 
+    nonInteraction: false, 
+  });
+
+  // --- NEW SCORING SYSTEM ---
+  let scores = {
+    ratAffinity: 0,
+    approvalRating: 50, // start neutral
+    chaosIndex: 0
+  };
+
+  story.traverseAndPlay(scores, (finalScores) => {
+    // --- ENDING LOGIC ---
+    let ending = "";
+
+    if (finalScores.ratAffinity > 5 && finalScores.approvalRating > 60 && finalScores.chaosIndex < 8) {
+      ending = `
+      🏆 Reelected Mayor!
+      Rats and humans alike cheer your weird leadership.
+      Final Line: "The pizza rat is dead. Long live the pizza mayor."
+      `;
+    } 
+    else if (finalScores.chaosIndex >= 10 || finalScores.approvalRating <= 20) {
+      ending = `
+      💀 You were Coupled!
+      A rogue faction (rats? pigeons? theatre kids?) storms City Hall.
+      Final Line: "The mayor was unavailable for comment. They're currently in a bodega freezer."
+      `;
+    } 
+    else {
+      ending = `
+      ❌ You Lost the Election.
+      New Yorkers voted for vibes instead of policies.
+      Final Line: "The new mayor is an animatronic Elmo with a Bloomberg accent."
+      `;
+    }
+
+    alert(ending);
+
+    ReactGA.event({
+      category: "Ending",
+      action: ending,
+      label: getCookie("user_id"),
+      nonInteraction: false,
+    });
+  });
+}
+
+
+export default startYourJourney;
+
+// import "./style.css"
+// import ReactGA from "react-ga4";
+// import myImage from './assets/images/fancy_rat.png'; // Adjust the path as necessary
+// import StoryTree from "./models/StoryTree";
+// import { v4 as uuidv4 } from 'uuid';
+// import { getCookie,setCookie ,clearCookie} from "./cookie";
+// const imgElement = document.getElementById("rat");
+// imgElement.src = myImage;
+// function startYourJourney() {
+//   const story = new StoryTree()
+//   story.insertStory()
+//   if (!getCookie('user_id')) {
+
+//     const userId = 'user_' + uuidv4();
+//     setCookie('user_id', userId, 365);
+//   }
+// ReactGA.event({
+//   category: "Start",
+//   action: "Start Your Journey",
+//   label: getCookie("user_id"), 
+//   nonInteraction: false, 
+// });
+// story.traverseAndPlay()
     
 //  alert("You give the rats pizza,"
     //     +"rats have pizza regaularly."+
@@ -164,7 +246,7 @@ story.traverseAndPlay()
     // }
     // alert("Game Over")
    
-  }
- btn.addEventListener("click",startYourJourney)
+//   }
+//  btn.addEventListener("click",startYourJourney)
 
 
